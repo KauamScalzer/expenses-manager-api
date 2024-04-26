@@ -1,4 +1,4 @@
-import { bodyParser } from './../middlewares/body-parser'
+import { bodyParser } from './../middlewares'
 
 import { Express } from 'express'
 

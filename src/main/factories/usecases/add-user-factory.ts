@@ -1,6 +1,6 @@
 import { IAddUser } from "./../../../domain/usecases"
 import { AddUser } from "./../../../data/usecases"
-import { UserRepository } from './../../../infra/db/repositories'
+import { UserRepository } from './../../../infra/db'
 import { BcryptAdapter } from './../../../infra/cryptography'
 
 export const makeAddUser = (): IAddUser => {

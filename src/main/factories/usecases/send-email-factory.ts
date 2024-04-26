@@ -1,6 +1,6 @@
 import { ISendEmail } from "./../../../domain/usecases"
 import { SendEmail } from "./../../../data/usecases"
-import { UserRepository } from './../../../infra/db/repositories'
+import { UserRepository } from './../../../infra/db'
 import { NodemailerAdapter } from './../../../infra/http'
 
 export const makeSendEmail = (): ISendEmail => {

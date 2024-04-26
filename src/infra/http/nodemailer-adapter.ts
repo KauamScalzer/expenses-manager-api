@@ -1,4 +1,4 @@
-import { IHttpSendEmail } from './../../data/protocols/http'
+import { IHttpSendEmail } from './../../data/protocols'
 import { nodemailerConfig } from './../../main/config/nodemailer'
 
 export class NodemailerAdapter implements IHttpSendEmail {

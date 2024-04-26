@@ -1,4 +1,4 @@
-import { ICreateUserRepository, ICheckUserByEmailRepository, IGetOneUserByEmailRepository, IUpdateUserRepository, IGetOneUserByAccessTokenRepository, IGetOneUserRepository } from "./../../../data/protocols/db"
+import { ICreateUserRepository, ICheckUserByEmailRepository, IGetOneUserByEmailRepository, IUpdateUserRepository, IGetOneUserByAccessTokenRepository, IGetOneUserRepository } from "./../../../data/protocols"
 import { AppDataSource } from './../../../main/config/data-source'
 import { User } from "../typeorm/models"
 

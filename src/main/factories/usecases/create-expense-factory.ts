@@ -1,6 +1,6 @@
 import { ICreateExpense } from "./../../../domain/usecases"
 import { CreateExpense } from "./../../../data/usecases"
-import { ExpenseRepository } from './../../../infra/db/repositories'
+import { ExpenseRepository } from './../../../infra/db'
 import { makeSendEmail } from "./send-email-factory"
 
 export const makeCreateExpense = (): ICreateExpense => {

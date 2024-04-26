@@ -1,6 +1,6 @@
 import { IAuthenticateUser } from "./../../../domain/usecases"
 import { AuthenticateUser } from "./../../../data/usecases"
-import { UserRepository } from './../../../infra/db/repositories'
+import { UserRepository } from './../../../infra/db'
 import { BcryptAdapter, JwtAdapter } from './../../../infra/cryptography'
 
 export const makeAuthenticateUser = (): IAuthenticateUser => {

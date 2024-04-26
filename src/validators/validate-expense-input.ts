@@ -1,6 +1,6 @@
 import { IValidateExpenseInput } from './../presentation/protocols'
 import { InvalidParamError } from './../presentation/errors'
-import { IGetOneUserRepository } from '../data/protocols/db'
+import { IGetOneUserRepository } from '../data/protocols'
 
 export class ValidateExpenseInput implements IValidateExpenseInput {
   constructor(

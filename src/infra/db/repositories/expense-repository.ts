@@ -1,4 +1,4 @@
-import { ICreateExpenseRepository, IGetAllExpensesByUserRepository, IDeleteExpenseRepository, IUpdateExpenseRepository, IGetOneExpenseRepository } from "./../../../data/protocols/db"
+import { ICreateExpenseRepository, IGetAllExpensesByUserRepository, IDeleteExpenseRepository, IUpdateExpenseRepository, IGetOneExpenseRepository } from "./../../../data/protocols"
 import { AppDataSource } from './../../../main/config/data-source'
 import { Expense } from "../typeorm/models"
 
