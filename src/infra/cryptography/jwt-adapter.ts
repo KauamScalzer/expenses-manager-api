@@ -8,7 +8,7 @@ export class JwtAdapter implements IEncrypter, IDecrypter {
     return jwt.sign({ id: stringToEncrypt }, this.secret)
   }
 
-  async decrypt (stringToDecript: string): Promise<string> {
-    return jwt.verify(stringToDecript, this.secret) as any
+  async decrypt (stringToDecrypt: string): Promise<string> {
+    return jwt.verify(stringToDecrypt, this.secret) as any
   }
 }

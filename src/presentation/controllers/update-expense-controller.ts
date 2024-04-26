@@ -1,5 +1,5 @@
 import { Controller, HttpResponse } from './../protocols'
-import { badRequest, serverError, ok } from './../helpers'
+import { badRequest, serverError, noContent } from './../helpers'
 import { MissingParamError } from './../errors'
 import { IUpdateExpense } from './../../domain/usecases'
 
@@ -17,9 +17,8 @@ export class UpdateExpenseController implements Controller {
         }
       }
       await this.updateExpense.update(request.id, request)
-      return ok('')
+      return noContent()
     } catch (error: any) {
-      console.log(error)
       return serverError(error)
     }
   }

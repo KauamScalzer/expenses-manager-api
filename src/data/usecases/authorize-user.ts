@@ -14,11 +14,9 @@ export class AuthorizeUser implements IAuthorizeUser {
     } catch (error) {
       return null
     }
-    if (token) {
-      const user = await this.getOneUserByAccessTokenRepository.getOneByAccessToken(accessToken)
-      if (user) {
-        return { authUserId: user.id }
-      }
+    const user = await this.getOneUserByAccessTokenRepository.getOneByAccessToken(accessToken)
+    if (user) {
+      return { authUserId: user.id }
     }
     return null
   }

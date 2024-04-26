@@ -1,11 +1,11 @@
 import { Controller, HttpResponse } from './../protocols'
 import { badRequest, serverError, ok, forbidden } from './../helpers'
 import { EmailInUseError, MissingParamError } from './../errors'
-import { IAddUser, IAuthenticateUser } from './../../domain/usecases'
+import { ICreateUser, IAuthenticateUser } from './../../domain/usecases'
 
 export class SignUpController implements Controller {
   constructor(
-    private readonly addUser: IAddUser,
+    private readonly createUser: ICreateUser,
     private readonly authenticateUser: IAuthenticateUser
   ){}
 
@@ -17,7 +17,7 @@ export class SignUpController implements Controller {
           return badRequest(new MissingParamError(field))
         }
       }
-      const user = await this.addUser.add(request)
+      const user = await this.createUser.create(request)
       if (!user) {
         return forbidden(new EmailInUseError())
       }

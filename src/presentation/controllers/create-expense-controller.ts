@@ -1,12 +1,13 @@
 import { Controller, HttpResponse, IValidateExpenseInput } from './../protocols'
 import { badRequest, serverError, ok } from './../helpers'
 import { MissingParamError } from './../errors'
-import { ICreateExpense } from './../../domain/usecases'
+import { ICreateExpense, ISendEmail } from './../../domain/usecases'
 
 export class CreateExpenseController implements Controller {
   constructor(
     private readonly createExpense: ICreateExpense,
-    private readonly validateExpenseInput: IValidateExpenseInput
+    private readonly validateExpenseInput: IValidateExpenseInput,
+    private readonly sendEmail: ISendEmail
   ){}
 
   async handle (request: CreateExpenseController.Request): Promise<HttpResponse> {
@@ -22,9 +23,9 @@ export class CreateExpenseController implements Controller {
         return badRequest(invalidParams)
       }
       const expense = await this.createExpense.create(request)
+      await this.sendEmail.send({ userId: request.userId, message: 'Despesa cadastrada', title: 'Despesa cadastrada' })
       return ok(expense)
     } catch (error: any) {
-      console.log(error)
       return serverError(error)
     }
   }

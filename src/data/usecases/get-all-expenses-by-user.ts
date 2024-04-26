@@ -6,7 +6,7 @@ export class GetAllExpensesByUser implements IGetAllExpensesByUser {
     private readonly getAllExpensesByUserRepository: IGetAllExpensesByUserRepository
   ){}
 
-  async getAll (params: IGetAllExpensesByUser.Params): Promise<IGetAllExpensesByUser.Result> {
-    return await this.getAllExpensesByUserRepository.getAllByUser(params)
+  async getAll (userId: string): Promise<IGetAllExpensesByUser.Result> {
+    return await this.getAllExpensesByUserRepository.getAllByUser(userId)
   }
 }

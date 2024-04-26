@@ -1,5 +1,5 @@
 import { Controller, HttpResponse } from './../protocols'
-import { serverError, ok } from './../helpers'
+import { serverError, noContent } from './../helpers'
 import { IDeleteExpense } from './../../domain/usecases'
 
 export class DeleteExpenseController implements Controller {
@@ -9,10 +9,9 @@ export class DeleteExpenseController implements Controller {
 
   async handle (request: DeleteExpenseController.Request): Promise<HttpResponse> {
     try {
-      const expenses = await this.deleteExpense.delete(request.id)
-      return ok(expenses)
+      await this.deleteExpense.delete(request.id)
+      return noContent()
     } catch (error: any) {
-      console.log(error)
       return serverError(error)
     }
   }

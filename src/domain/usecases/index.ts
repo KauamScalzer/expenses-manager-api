@@ -1,4 +1,4 @@
-export { IAddUser } from './add-user'
+export { ICreateUser } from './create-user'
 export { IAuthenticateUser } from './authenticate-user'
 export { ICreateExpense } from './create-expense'
 export { IGetAllExpensesByUser } from './get-all-expenses-by-user'

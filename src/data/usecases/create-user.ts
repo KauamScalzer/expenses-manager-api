@@ -1,14 +1,14 @@
-import { IAddUser } from "../../domain/usecases"
+import { ICreateUser } from "../../domain/usecases"
 import { ICheckUserByEmailRepository, ICreateUserRepository, IHasher } from './../protocols'
 
-export class AddUser implements IAddUser {
+export class CreateUser implements ICreateUser {
   constructor (
     private readonly checkUserByEmailRepository: ICheckUserByEmailRepository,
     private readonly hasher: IHasher,
     private readonly createUserRepository: ICreateUserRepository
   ){}
 
-  async add (user: IAddUser.Params): Promise<boolean> {
+  async create (user: ICreateUser.Params): Promise<boolean> {
     const userExists = await this.checkUserByEmailRepository.check(user.email)
     if (!userExists) {
       const hashPassword = await this.hasher.hash(user.password)

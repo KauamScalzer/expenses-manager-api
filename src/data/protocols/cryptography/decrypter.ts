@@ -1,3 +1,3 @@
 export interface IDecrypter {
-  decrypt: (stringToDecript: string) => Promise<string>
+  decrypt: (stringToDecrypt: string) => Promise<string>
 }

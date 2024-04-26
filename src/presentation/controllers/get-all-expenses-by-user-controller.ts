@@ -9,10 +9,9 @@ export class GetAllExpensesByUserController implements Controller {
 
   async handle (request: GetAllExpensesByUserController.Request): Promise<HttpResponse> {
     try {
-      const expenses = await this.getAllExpensesByUser.getAll(request)
+      const expenses = await this.getAllExpensesByUser.getAll(request.userId)
       return ok(expenses)
     } catch (error: any) {
-      console.log(error)
       return serverError(error)
     }
   }

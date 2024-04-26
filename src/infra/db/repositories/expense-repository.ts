@@ -8,9 +8,9 @@ export class ExpenseRepository implements ICreateExpenseRepository, IGetAllExpen
     return await expenseRepository.save(expense)
   }
 
-  async getAllByUser (params: IGetAllExpensesByUserRepository.Params): Promise<IGetAllExpensesByUserRepository.Result> {
+  async getAllByUser (userId: string): Promise<IGetAllExpensesByUserRepository.Result> {
     const expenseRepository = AppDataSource.getRepository(Expense)
-    return await expenseRepository.find({ where: { userId: params.userId } })
+    return await expenseRepository.find({ where: { userId } })
   }
 
   async delete (id: string): Promise<void> {

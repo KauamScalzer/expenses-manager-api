@@ -1,4 +1,4 @@
-export { makeAddUser } from './add-user-factory'
+export { makeCreateUser } from './create-user-factory'
 export { makeAuthenticateUser } from './authenticate-user-factory'
 export { makeCreateExpense } from './create-expense-factory'
 export { makeGetAllExpensesByUser } from './get-all-expenses-by-user-factory'

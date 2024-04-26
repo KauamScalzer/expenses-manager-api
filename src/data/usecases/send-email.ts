@@ -10,7 +10,7 @@ export class SendEmail implements ISendEmail {
   async send (data: ISendEmail.Params): Promise<void> {
     const user = await this.getOneUserRepository.getOne(data.userId)
     if (user) {
-      await this.httpSendEmail.send({ email: user.email, ...data })
+      await this.httpSendEmail.send({ email: user.email, message: data.message, title: data.title })
     }
   }
 }

@@ -1,4 +1,4 @@
-export { AddUser } from './add-user'
+export { CreateUser } from './create-user'
 export { AuthenticateUser } from './authenticate-user'
 export { CreateExpense } from './create-expense'
 export { GetAllExpensesByUser } from './get-all-expenses-by-user'
