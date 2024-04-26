@@ -1,6 +1,5 @@
 import { IAuthorizeUser } from '../../domain/usecases'
-import { IGetOneUserByAccessTokenRepository } from './../protocols/db'
-import { IDecrypter } from './../protocols/cryptography'
+import { IGetOneUserByAccessTokenRepository, IDecrypter } from './../protocols'
 
 export class AuthorizeUser implements IAuthorizeUser {
   constructor (

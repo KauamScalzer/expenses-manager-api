@@ -1,5 +1,5 @@
 import { ICreateExpense, ISendEmail } from "../../domain/usecases"
-import { ICreateExpenseRepository } from './../protocols/db'
+import { ICreateExpenseRepository } from './../protocols'
 
 export class CreateExpense implements ICreateExpense {
   constructor (

@@ -1,5 +1,5 @@
 import { IDeleteExpense } from "../../domain/usecases"
-import { IDeleteExpenseRepository } from './../protocols/db'
+import { IDeleteExpenseRepository } from './../protocols'
 
 export class DeleteExpense implements IDeleteExpense {
   constructor (

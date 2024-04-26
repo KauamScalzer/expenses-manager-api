@@ -1,5 +1,5 @@
 import { IAuthorizeUserExpense } from '../../domain/usecases'
-import { IGetOneExpenseRepository } from './../protocols/db'
+import { IGetOneExpenseRepository } from './../protocols'
 
 export class AuthorizeUserExpense implements IAuthorizeUserExpense {
   constructor (

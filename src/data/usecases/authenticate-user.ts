@@ -1,6 +1,5 @@
 import { IAuthenticateUser } from '../../domain/usecases'
-import { IGetOneUserByEmailRepository, IUpdateUserRepository } from './../protocols/db'
-import { IHashComparer, IEncrypter } from './../protocols/cryptography'
+import { IGetOneUserByEmailRepository, IUpdateUserRepository, IHashComparer, IEncrypter } from './../protocols'
 
 export class AuthenticateUser implements IAuthenticateUser {
   constructor (

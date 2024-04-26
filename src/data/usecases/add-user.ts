@@ -1,6 +1,5 @@
 import { IAddUser } from "../../domain/usecases"
-import { ICheckUserByEmailRepository, ICreateUserRepository } from './../protocols/db'
-import { IHasher } from './../protocols/cryptography'
+import { ICheckUserByEmailRepository, ICreateUserRepository, IHasher } from './../protocols'
 
 export class AddUser implements IAddUser {
   constructor (

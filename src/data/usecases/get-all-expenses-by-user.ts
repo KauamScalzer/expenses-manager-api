@@ -1,5 +1,5 @@
 import { IGetAllExpensesByUser } from "../../domain/usecases"
-import { IGetAllExpensesByUserRepository } from './../protocols/db'
+import { IGetAllExpensesByUserRepository } from './../protocols'
 
 export class GetAllExpensesByUser implements IGetAllExpensesByUser {
   constructor (

@@ -1,6 +1,5 @@
 import { ISendEmail } from "../../domain/usecases"
-import { IGetOneUserRepository } from './../protocols/db'
-import { IHttpSendEmail } from './../protocols/http'
+import { IGetOneUserRepository, IHttpSendEmail } from './../protocols'
 
 export class SendEmail implements ISendEmail {
   constructor (

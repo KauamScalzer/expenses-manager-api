@@ -1,5 +1,5 @@
 import { IUpdateExpense } from "../../domain/usecases"
-import { IUpdateExpenseRepository } from './../protocols/db'
+import { IUpdateExpenseRepository } from './../protocols'
 
 export class UpdateExpense implements IUpdateExpense {
   constructor (
