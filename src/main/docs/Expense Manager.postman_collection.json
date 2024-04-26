@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "ffd2e105-0b76-4f0f-88bb-412bf4afcc69",
+		"name": "Expense Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24109927",
+		"_collection_link": "https://dark-meadow-443522.postman.co/workspace/Collections~3bb47f35-8f07-4c10-9263-b29713ff42f0/collection/24109927-ffd2e105-0b76-4f0f-88bb-412bf4afcc69?action=share&source=collection_link&creator=24109927"
+	},
+	"item": [
+		{
+			"name": "SignUP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"scalzerkauam@gmail.com\",\n    \"password\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/api/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"scalzerkauam@gmail.com\",\n    \"password\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/api/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create expanse",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2Nzk2MDlkLTlhMWItNDIzNC1hNzE2LTUyYWUwODJjNGY4YSIsImlhdCI6MTcxNDEyNjEyMn0.cKhbIDRqSZLpg4_ZMMdbO2qBYuDesixT38U-0eUwDEI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Descrição da despesa\",\n    \"date\": \"2024-04-25\",\n    \"userId\": \"2679609d-9a1b-4234-a716-52ae082c4f8a\",\n    \"value\": 56079.9\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/api/expense",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"expense"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Expense",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2Nzk2MDlkLTlhMWItNDIzNC1hNzE2LTUyYWUwODJjNGY4YSIsImlhdCI6MTcxNDEzNzY4MH0.bl7G_37qVXxX_Ot70KnQSW0GwqEK2EUb2-l1-PAkcg4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"Descrição da despesa\",\n    \"date\": \"2024-04-25\",\n    \"userId\": \"2679609d-9a1b-4234-a716-52ae082c4f8a\",\n    \"value\": 56079.07\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/api/expense/16153ca0-d574-4679-85e8-f16b2ddf36fa",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"expense",
+						"16153ca0-d574-4679-85e8-f16b2ddf36fa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete expense",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2Nzk2MDlkLTlhMWItNDIzNC1hNzE2LTUyYWUwODJjNGY4YSIsImlhdCI6MTcxNDEzNzY4MH0.bl7G_37qVXxX_Ot70KnQSW0GwqEK2EUb2-l1-PAkcg4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5050/api/expense/16153ca0-d574-4679-85e8-f16b2ddf36fa",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"expense",
+						"16153ca0-d574-4679-85e8-f16b2ddf36fa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List expenses by user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2Nzk2MDlkLTlhMWItNDIzNC1hNzE2LTUyYWUwODJjNGY4YSIsImlhdCI6MTcxNDEzNzY4MH0.bl7G_37qVXxX_Ot70KnQSW0GwqEK2EUb2-l1-PAkcg4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/api/expense/by-user/2679609d-9a1b-4234-a716-52ae082c4f8a",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"api",
+						"expense",
+						"by-user",
+						"2679609d-9a1b-4234-a716-52ae082c4f8a"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

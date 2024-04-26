@@ -26,6 +26,7 @@ export class CreateExpenseController implements Controller {
       await this.sendEmail.send({ userId: request.userId, message: 'Despesa cadastrada', title: 'Despesa cadastrada' })
       return ok(expense)
     } catch (error: any) {
+      console.log(error)
       return serverError(error)
     }
   }

@@ -1,13 +1,14 @@
 import { DataSource } from "typeorm"
 import { User, Expense } from './../../infra/db/typeorm/models'
+import env from './env'
 
 export const AppDataSource = new DataSource({
     type: "mysql",
-    host: "localhost",
-    port: 3306,
-    username: "root",
-    password: "",
-    database: "expenses_manager_db",
+    host: env.dbHost,
+    port: parseInt(env.dbPort),
+    username: env.dbUserName,
+    password: env.dbPassword,
+    database: env.dbName,
     entities: [User, Expense],
     synchronize: true,
     logging: false,

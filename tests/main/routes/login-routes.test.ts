@@ -1,14 +1,13 @@
+import "reflect-metadata"
 import { setupApp } from './../../../src/main/config/app'
 import { Express } from 'express'
 import * as request from 'supertest'
-import { TypeormHelper } from './../../../src/infra/db/typeorm/helpers/typeorm-helper'
 
 let app: Express
 
 describe('Login Routes', () => {
   beforeAll(async () => {
     app = await setupApp()
-    await TypeormHelper.connect()
   })
 
   describe('POST /signup', () => {
@@ -16,7 +15,7 @@ describe('Login Routes', () => {
       await request(app)
         .post('/api/signup')
         .send({
-          email: 'rodrigo.manguinho@gmail.com',
+          email: 'teste.com',
           password: '123'
         })
         .expect(200)

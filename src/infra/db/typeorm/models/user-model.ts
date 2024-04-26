@@ -12,7 +12,7 @@ export class User {
   @Column()
   password: string
 
-  @Column({ name: 'access_token'})
+  @Column({ name: 'access_token', nullable: true })
   accessToken?: string
 
   @OneToMany(() => Expense, expense => expense.user)

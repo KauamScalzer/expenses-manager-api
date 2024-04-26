@@ -1,12 +1,13 @@
 import * as nodemailer from 'nodemailer'
+import env from './env'
 
 export const nodemailerConfig = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 587,
+  host: env.nodemailerHost,
+  port: env.nodemailerPort ? parseInt(env.nodemailerPort) : 0,
   secure: false,
   auth: {
-    user: 'scalzerkauam10@gmail.com',
-    pass: 'axbu kudx vskg lxim'
+    user: env.nodemailerUser,
+    pass: env.nodemailerPass
   },
   tls: {
     rejectUnauthorized: false
