@@ -5,7 +5,7 @@ import { Router } from 'express'
 
 export default (router: Router): void => {
   router.post('/expense', auth, adaptRoute(makeCreateExpenseController()))
-  router.get('/expense/by-user/:userId', auth, adaptRoute(makeGetAllExpensesByUserController()))
+  router.get('/expense/by-user/:userId', auth, authExpense, adaptRoute(makeGetAllExpensesByUserController()))
   router.delete('/expense/:id', auth, authExpense, adaptRoute(makeDeleteExpenseController()))
   router.put('/expense/:id', auth, authExpense, adaptRoute(makeUpdateExpenseController()))
 }
